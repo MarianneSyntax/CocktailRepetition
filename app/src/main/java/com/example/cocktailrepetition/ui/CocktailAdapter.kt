@@ -12,35 +12,29 @@ import com.example.cocktailrepetition.data.models.Cocktail
 
 class CocktailAdapter(): RecyclerView.Adapter<CocktailAdapter.ItemViewHolder>() {
 
-    private var dataset = listOf<Cocktail>()
+    //TODO: dataset
 
     inner class ItemViewHolder(private val view: View): RecyclerView.ViewHolder(
         view){
-        val name = view.findViewById<TextView>(R.id.cocktail_name)
-        val image = view.findViewById<ImageView>(R.id.cocktail_image)
+        //TODO
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        val adapterLayout = LayoutInflater.from(parent.context)
-            .inflate(R.layout.cocktail_item, parent, false)
-        return ItemViewHolder(adapterLayout)
+        //TODO
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        val item = dataset[position]
+        //todo: dem item inhalt zuweisen
         //TODO: set name and picture, need Cocktail data class for that
-        holder.name.text = item.cocktailName
-        // load kommt von coil
-        holder.image.load(item.cocktailImage)
+
     }
 
     override fun getItemCount(): Int {
-        return dataset.size
+       //TODO
     }
 
     fun submitList(list: List<Cocktail>) {
-        dataset = list
-        notifyDataSetChanged()
+        //Todo
     }
 
 
