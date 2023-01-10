@@ -29,14 +29,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val cocktailAdapter = CocktailAdapter()
-        val cocktailRecycler = binding.cocktailRecycler
-        cocktailRecycler.adapter = cocktailAdapter
-
-        viewModel.getCocktails()
-        viewModel.cocktails.observe(viewLifecycleOwner){
-            cocktailAdapter.submitList(it)
-        }
+        //TODO: recycler und adapter festlegen, befuellen
     }
 
 
