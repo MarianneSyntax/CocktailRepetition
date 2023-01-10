@@ -1,6 +1,7 @@
 package com.example.cocktailrepetition.data.remote
 
 import com.example.cocktailrepetition.data.models.Cocktail
+import com.example.cocktailrepetition.data.models.CocktailList
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
@@ -8,7 +9,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
 
-const val BASE_URL = "https://www.thecocktaildb.com/api/json/v1/"
+const val BASE_URL = "https://www.thecocktaildb.com/api/json/v1/1/"
 
 
 private val moshi = Moshi.Builder()
@@ -23,7 +24,7 @@ private val retrofit = Retrofit.Builder()
 interface CocktailApiService {
 
     @GET("search.php?s=margarita")
-    suspend fun getMargaritaList(): List<Cocktail>
+    suspend fun getMargaritaList(): CocktailList
 }
 
 object CocktailApi {
