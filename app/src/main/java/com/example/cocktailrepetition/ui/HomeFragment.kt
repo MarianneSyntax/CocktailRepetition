@@ -1,4 +1,4 @@
-package com.example.cocktailrepetition
+package com.example.cocktailrepetition.ui
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -28,9 +28,15 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        // instanz vom adapter anlegen
+        val cocktailAdapter = CocktailAdapter()
+        // dem recycler den adapter zuweisen, recycler also aus dem layout holen
+        val cocktailRecycler = binding.cocktailRecycler
 
-        //TODO: recycler und adapter festlegen, befuellen
+        viewModel.getCocktails()
+        viewModel.cocktails.observe(viewLifecycleOwner) {
+            cocktailAdapter.submitList(it)
+        }
     }
-
 
 }
