@@ -9,11 +9,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.example.cocktailrepetition.databinding.FragmentHomeBinding
 import com.example.cocktailrepetition.ui.CocktailAdapter
+import com.example.cocktailrepetition.ui.CocktailViewModel
 
 class HomeFragment : Fragment() {
 
 
-    private val viewModel: HomeViewModel by viewModels()
+    private val viewModel: CocktailViewModel by viewModels()
 
     private lateinit var binding: FragmentHomeBinding
 
@@ -32,8 +33,10 @@ class HomeFragment : Fragment() {
         val cocktailRecycler = binding.cocktailRecycler
         cocktailRecycler.adapter = cocktailAdapter
 
-        // todo: viewModel, wo die daten herkommen, benutzen
-
+        viewModel.getCocktails()
+        viewModel.cocktails.observe(viewLifecycleOwner){
+            cocktailAdapter.submitList(it)
+        }
     }
 
 
