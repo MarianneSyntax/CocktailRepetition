@@ -14,24 +14,29 @@
 
         <TextView
             android:id="@+id/title_text"
-            android:layout_width="134dp"
-            android:layout_height="11dp"
-            android:layout_marginTop="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
             android:text="Margarita Hour"
+            android:textAlignment="center"
+            android:textSize="50dp"
+            android:textColor="@color/purple_700"
+            android:fontFamily="cursive"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/cocktail_recycler"
             android:layout_width="match_parent"
-            android:layout_height="500dp"
-            tools:listitem="@layout/cocktail_item"
+            android:layout_height="800dp"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title_text" />
+            app:layout_constraintTop_toBottomOf="@+id/title_text"
+            app:layout_constraintVertical_bias="0.0"
+            app:spanCount="2"
+            tools:listitem="@layout/cocktail_item" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
