@@ -8,7 +8,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
-        android:name="com.example.cocktailrepetition.HomeFragment"
+        android:name="com.example.cocktailrepetition.ui.HomeFragment"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:background="@color/purple_200"

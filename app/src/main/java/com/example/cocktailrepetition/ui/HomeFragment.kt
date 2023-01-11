@@ -30,8 +30,10 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         // instanz vom adapter anlegen
         val cocktailAdapter = CocktailAdapter()
-        // dem recycler den adapter zuweisen, recycler also aus dem layout holen
+        // recycler also aus dem layout holen
         val cocktailRecycler = binding.cocktailRecycler
+        // dem recycler den adapter zuweisen, damit er weiss, was er darstellen soll
+        cocktailRecycler.adapter = cocktailAdapter
 
         viewModel.getCocktails()
         viewModel.cocktails.observe(viewLifecycleOwner) {
