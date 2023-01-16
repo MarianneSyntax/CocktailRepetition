@@ -1,5 +1,3 @@
 package com.example.cocktailrepetition.data.models
 
-data class CocktailList(
-    val drinks: List<Cocktail>
-)
+//todo: data class, die die antwort des api calls auffängt

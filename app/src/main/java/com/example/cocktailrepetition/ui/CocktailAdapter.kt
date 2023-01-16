@@ -8,11 +8,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.cocktailrepetition.R
-import com.example.cocktailrepetition.data.models.Cocktail
 
 class CocktailAdapter(): RecyclerView.Adapter<CocktailAdapter.ItemViewHolder>() {
 
-    private var dataset = listOf<Cocktail>()
+    //todo: liste von cocktails
+    private var dataset = listOf<String>()
 
     inner class ItemViewHolder(private val view: View): RecyclerView.ViewHolder(
         view){
@@ -29,17 +29,19 @@ class CocktailAdapter(): RecyclerView.Adapter<CocktailAdapter.ItemViewHolder>() 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         // dem item inhalt zuweisen
         val cocktailItem = dataset[position]
-        // set name and picture
-        holder.cocktailName.text = cocktailItem.cocktailName
+        //todo name und bild des cocktails in die views schreiben
+        //name:
+
         // coil hilft, bilder aus dem internet easy reinzuladen
-        holder.cocktailImage.load(cocktailItem.cocktailImage)
+
     }
 
     override fun getItemCount(): Int {
        return dataset.size
     }
 
-    fun submitList(list: List<Cocktail>) {
+    //todo: submitList, die die liste von cocktails bekommt und die liste im adapter aktualisiert
+    fun submitList(list: List<String>) {
         dataset = list
         notifyDataSetChanged()
     }
