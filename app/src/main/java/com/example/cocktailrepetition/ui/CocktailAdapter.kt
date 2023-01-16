@@ -30,18 +30,18 @@ class CocktailAdapter(): RecyclerView.Adapter<CocktailAdapter.ItemViewHolder>() 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         // dem item inhalt zuweisen
         val cocktailItem = dataset[position]
-        //todo name und bild des cocktails in die views schreiben
+        //name und bild des cocktails in die views schreiben
         //name:
-
+        holder.cocktailName.text = cocktailItem.cocktailName
         // coil hilft, bilder aus dem internet easy reinzuladen
-
+        holder.cocktailImage.load(cocktailItem.cocktailImage)
     }
 
     override fun getItemCount(): Int {
        return dataset.size
     }
 
-    //todo: submitList, die die liste von cocktails bekommt und die liste im adapter aktualisiert
+    //submitList, die die liste von cocktails bekommt und die liste im adapter aktualisiert
     fun submitList(list: List<Cocktail>) {
         dataset = list
         notifyDataSetChanged()
