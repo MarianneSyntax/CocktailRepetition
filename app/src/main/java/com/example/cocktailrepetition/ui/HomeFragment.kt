@@ -35,10 +35,10 @@ class HomeFragment : Fragment() {
         // dem recycler den adapter zuweisen, damit er weiss, was er darstellen soll
         cocktailRecycler.adapter = cocktailAdapter
 
-        viewModel.getCocktails()
-        viewModel.cocktails.observe(viewLifecycleOwner) {
-            cocktailAdapter.submitList(it)
-        }
+        //todo: getCocktails aus dem viewmodel aufrufen, um die cocktails in die liste im viemodel zu bekommen
+
+        //todo: cocktails aus der liste im viewmodel holen und dem adapter übergeben
+
     }
 
 }
