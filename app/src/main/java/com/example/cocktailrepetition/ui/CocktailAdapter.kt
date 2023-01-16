@@ -8,11 +8,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.cocktailrepetition.R
+import com.example.cocktailrepetition.data.models.Cocktail
 
 class CocktailAdapter(): RecyclerView.Adapter<CocktailAdapter.ItemViewHolder>() {
 
-    //todo: liste von cocktails
-    private var dataset = listOf<String>()
+
+    private var dataset = listOf<Cocktail>()
 
     inner class ItemViewHolder(private val view: View): RecyclerView.ViewHolder(
         view){
@@ -41,7 +42,7 @@ class CocktailAdapter(): RecyclerView.Adapter<CocktailAdapter.ItemViewHolder>() 
     }
 
     //todo: submitList, die die liste von cocktails bekommt und die liste im adapter aktualisiert
-    fun submitList(list: List<String>) {
+    fun submitList(list: List<Cocktail>) {
         dataset = list
         notifyDataSetChanged()
     }
